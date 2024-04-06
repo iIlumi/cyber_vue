@@ -19,13 +19,44 @@
   </head>
 
   <body>
-    <header>
-      <!-- place navbar here -->
-    </header>
-    <main></main>
-    <footer>
-      <!-- place footer here -->
-    </footer>
+    <div id="app">
+      This is inside Vue template
+      <h1>{{ message }}</h1>
+      <span> some randome text - {{text}}</span>
+      <h2 :class="customClass">This text should be red</h2>
+      <div>
+        <label>Ten dang nhap</label>
+        <input type="text" v-model="userName" />
+      </div>
+      <div>
+        <label>Mat khau</label>
+        <input type="text" v-model="password" />
+      </div>
+      <div>
+        <label>Test onInput w VN</label>
+        <input type="text" @input="handleInput" />
+      </div>
+
+      <form @submit.prevent="submitForm">
+        <button type="submit">Submit</button>
+      </form>
+      <hr>
+
+      <input type="number" v-model="count">Increase</input>
+      <div>{{stringMerge}}</div>
+      <button @click="password='123'">Set default password</button>
+    </div>
+
+    <hr>
+    <div id="app2">
+      <input type="number" v-model="val1">
+      <input type="number" v-model="val2">
+      <input type="number" :value="val3" @input="ev => val3 = +ev.target.value">
+
+        <button @click="swap1w2">Swap 1 with 2</button>
+        <div>sum: {{sum}} , val3 : {{val3}}</div>
+    </div>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -39,5 +70,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js"></script>
+    <!-- <script src="./index-optionApi.js"></script> -->
   </body>
 </html>
