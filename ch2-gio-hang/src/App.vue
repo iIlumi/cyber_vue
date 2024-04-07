@@ -9,6 +9,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <button class="btn btn-info">Bootstrap</button>
     </div>
   </header>
 
