@@ -292,14 +292,6 @@ https://github.com/animate-css/animate.css/blob/main/source/attention_seekers/sh
   background-repeat: no-repeat;
 }
 
-/*** LOGO ***/
-/**************************/
-
-.logo-pokemon {
-  max-width: 30rem;
-  margin: 0 auto 3rem;
-}
-
 /*** PAGE ***/
 /**************************/
 
@@ -450,6 +442,8 @@ https://github.com/animate-css/animate.css/blob/main/source/attention_seekers/sh
   left: 0;
   transform: translate(0, -50%);
   opacity: 0;
+  /* could comment about */
+  /* but the animation when select will not be applied */
   cursor: pointer;
 }
 

@@ -2,10 +2,14 @@ const { createApp, ref, computed } = Vue
 
 createApp({
   setup() {
-    const msg = "hello"
+    const selectValue = 4
+    const deck = createDeck(selectValue)
+    // In this static render there flash of image slow load from api
 
     return {
-      msg
+      selectValue,
+      gameOptions,
+      deck
     }
   }
 }).mount("#app")
