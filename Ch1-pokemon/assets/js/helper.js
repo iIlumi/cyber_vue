@@ -4,6 +4,7 @@ const urlBase =
 const apiData = Array.from({ length: 100 }).map((_, index) => {
   const id = index + 1
   const obj = {
+    id: id,
     name: `pkm-${id}`,
     images: {
       game: {
@@ -42,9 +43,12 @@ const createDeck = (selectValue) => {
   const deck = []
   for (let i = 0; i < selectValue; i++) {
     const randomIndex = getRandomNumber(0, apiData.length)
-    const randomPokemon = apiData[randomIndex]
+    const randomPokemon = { ...apiData[randomIndex], isCovered: true }
 
-    deck.push(randomPokemon, randomPokemon)
+    deck.push(randomPokemon, {
+      ...randomPokemon,
+      id: randomPokemon.id + selectValue
+    })
   }
   return deck.sort(() => Math.random() - 0.5)
 }
